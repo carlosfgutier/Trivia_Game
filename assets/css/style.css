@@ -1,0 +1,52 @@
+body {background-image: url(../images/naval.jpg);
+	background-size: cover;
+}
+
+.container {text-align: center;
+	margin: 30px 100px;
+	
+}
+
+/*Title and Countdown*/
+.infoSection {position: fixed;
+	top: 0;
+	left: 100px; /*7%*/
+	right: 100px;	/*7%*/
+	min-width: 480px;
+}
+
+.header {font-family: 'Della Respira', serif;
+	font-size: 60px;
+	font-weight: bolder;
+	color: #B8935A;
+	padding: 30px 0;
+	background-color: #5C2904;
+}
+
+.countdown {font-family: 'Della Respira', serif;
+	background-color: #E5DFBC;
+	font-size: 15px;
+	padding: 20px 0;
+}
+
+/*Questions*/
+.questionsSection {font-family: 'Della Respira', serif;
+	font-size: 20px;
+	min-width: 400px;
+	background-color: rgba(227, 225, 200, 0.6);
+	padding: 40px;
+	margin-top: 180px;
+}
+
+.answers {display: inline-flex;
+	margin: 10px 0px;
+
+}
+
+/*footer*/
+footer {color: #C1C1B2;
+	text-align: center;
+}
+
+.footer {color: #C1C1B2;
+}
