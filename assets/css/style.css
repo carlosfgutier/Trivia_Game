@@ -8,38 +8,56 @@ body {background-image: url(../images/naval.jpg);
 }
 
 /*Title and Countdown*/
-.infoSection {position: fixed;
-	top: 0;
-	left: 100px; /*7%*/
-	right: 100px;	/*7%*/
-	min-width: 480px;
-}
-
 .header {font-family: 'Della Respira', serif;
 	font-size: 60px;
 	font-weight: bolder;
 	color: #B8935A;
 	padding: 30px 0;
+	margin-top: 20px;
 	background-color: #5C2904;
+	border-radius: 25px;
+	min-width: 480px;
 }
 
 .countdown {font-family: 'Della Respira', serif;
-	background-color: #E5DFBC;
+	background-color: rgba(229,223,188, 0.9);
 	font-size: 15px;
 	padding: 20px 0;
+	border-radius: 25px;
+	min-width: 480px;
+	margin-top: 20px;
+	position: sticky;
+	top: 0;
 }
 
-/*Questions*/
+/*Questions Section */
 .questionsSection {font-family: 'Della Respira', serif;
 	font-size: 20px;
 	min-width: 400px;
-	background-color: rgba(227, 225, 200, 0.6);
+	background-color: rgba(229,223,188, 0.9);
 	padding: 40px;
-	margin-top: 180px;
+	margin-top: 20px;
+	border-radius: 25px;
 }
 
 .answers {display: inline-flex;
 	margin: 10px 0px;
+}
+
+.singleQuestion {margin: 50px 0;
+}
+
+#sync {font-family: 'Della Respira', serif;
+	font-size: 40px;
+	font-weight: bolder;
+	color: #B8935A;
+	padding: 30px 0;
+	margin-top: 20px;
+	background-color: #5C2904;
+	border-radius: 25px;
+	width: 300px;
+	border-color: rgba(229,223,188, 0.9);
+	border-width: 3px;
 
 }
 
