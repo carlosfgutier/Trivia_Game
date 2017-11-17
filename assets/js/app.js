@@ -1,35 +1,48 @@
+var interval;
+var timer = 300;
+
 //Have the answers been submitted?
 var finished = false;
 
+//Score
+var correct = 0;
+var incorrect = 0;
+var unanswered = 10;
+
 //Timer set to start at 300 seconds (3 minutes)
-var timer;
 $(".countdown").text("Time Remaining: " + timer + " seconds");
 
-var interval;
 
 //Ready document 
 $(document).ready(function() {
-	//when document opens show start button
- 	$(".countdown").html("<button> Click here to start </button>")
+	// //when document opens show start button
+ // 	$("#startButton").html("<button> Click here to start </button>")
 
- 	//Disable answer
- 	$("input").prop("disabled", true);
+ 	//Hide answers section
+ 	$(".questionsSection").hide();
+
+ 	$(".countdown").hide();
 
  	//Run function when start button is clicked
- 	$(".countdown").on("click", function() {
-	
-		timer = 5;
+ 	$("#startButton").on("click", function() {
+
+ 		//hide start button
+ 		$("#startButton").hide();
+		
 		//Show timer
 		$(".countdown").html('<h3>Time Remaining: ' + timer + ' seconds');
 
-		//enable answers
-		$("input").prop("disabled", false);
-
+		$(".countdown").show();
+		
 		beginTimer();
+
+		// Show answer Section
+		$(".questionsSection").show();
 
 		//Show results when answers are submitted
 		$("#sync").on("click", function() {
 			showResults();
+			finished = true;
 		});
 
  	});
@@ -38,31 +51,51 @@ $(document).ready(function() {
 
 //Definition of Functions
 //-----------------------------------------------//
-function beginTimer() {
-	interval = setInterval(decrease, 1000);
-}
-
-
 function decrease() {
-	//decrease timer by 1 second
-	timer--;
+	
+	//allow function to run only once after beginTimer switches to true
+	if (startTimer = true) {
+		//decrease timer by 1 second
+		timer--;
 
-	//Update time left in countdown section
-	$(".countdown").html("Time Remaining: " + timer + " seconds");
+		//Update time left in countdown section
+		$(".countdown").html("Time Remaining: " + timer + " seconds");
 
-	//Show results when time runs out
-	if (timer === 0) {
+		//Show results when time runs out
+		if (timer === 0) {
 
-		showResults();
+			showResults();
+		}
 	}
 }
 
-// REVISE SHOWRESULTS
-//DEFINE SHOWRESULTS BY CHANGING HTML TO NEW SCREEEN CREATED THROUGH JQEARY
-function showResults() {
-	$(".container").html('<h2>You are done.</h2> <br> <p>Correct answers: </p>' + correct + '<br> <p>Incorrect answers: </p>' + incorrect + '<p>Unanswered: </p>' + unanswered);
+function beginTimer() {
+	//reduces timer by one every second 
+	interval = setInterval(decrease, 1000);
 }
 
+function showResults() {
+	//collect value from each checked answer
+	var result = $("input:checked").each(function(i,object) {
+		console.log(i);
+		console.log($(object).val());
+		var isCorrect = $(object).val()
+		
+		//keeps track of correct and incorrect aswers
+		if (isCorrect==="cor") {
+			correct++;
+		} else if (isCorrect==="inc") {
+			incorrect++;
+		}
+
+		//determine how many questions quere unaswered
+		var answered = correct + incorrect;	
+		unanswered = 10 - parseInt(answered);
+	});
+
+	//replace html with new screen showing results
+	$(".container").html('<div class="results"><h2>You are done!</h2> <br> <p>Correct answers: ' + correct + '</p> <br> <p>Incorrect answers: ' + incorrect + '</p> <br> <p>Unanswered: ' + unanswered + '</p></div>');
+};
+
 //TODO
-//LOCK SCROLLING UNTIL START BUTTON IS CLICKED OR MAKE FONT SAME COLOR AS BACKGROUND
-//RECORD SCORE FOR WINS, LOSSES AND UNDEFINED
+//FIX TIMER

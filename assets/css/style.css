@@ -47,7 +47,7 @@ body {background-image: url(../images/naval.jpg);
 .singleQuestion {margin: 50px 0;
 }
 
-#sync {font-family: 'Della Respira', serif;
+.button {font-family: 'Della Respira', serif;
 	font-size: 40px;
 	font-weight: bolder;
 	color: #B8935A;
@@ -62,9 +62,20 @@ body {background-image: url(../images/naval.jpg);
 }
 
 /*footer*/
-footer {color: #C1C1B2;
+footer {color: black;
 	text-align: center;
 }
 
-.footer {color: #C1C1B2;
+.footer {color: black;
+}
+
+/*results*/
+.results {font-family: 'Della Respira', serif;
+	font-size: 20px;
+	min-width: 400px;
+	background-color: rgba(229,223,188, 0.9);
+	padding: 40px;
+	margin-top: 20px;
+	border-radius: 25px;
+
 }
