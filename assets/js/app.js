@@ -15,9 +15,7 @@ $(".countdown").text("Time Remaining: " + timer + " seconds");
 
 //Ready document 
 $(document).ready(function() {
-	// //when document opens show start button
- // 	$("#startButton").html("<button> Click here to start </button>")
-
+	
  	//Hide answers section
  	$(".questionsSection").hide();
 
@@ -94,8 +92,5 @@ function showResults() {
 	});
 
 	//replace html with new screen showing results
-	$(".container").html('<div class="results"><h2>You are done!</h2> <br> <p>Correct answers: ' + correct + '</p> <br> <p>Incorrect answers: ' + incorrect + '</p> <br> <p>Unanswered: ' + unanswered + '</p></div>');
+	$(".container").html('<div class="results"><h2>You are done!</h2> <br> <p>Correct answers: ' + correct + '</p> <br> <p>Incorrect answers: ' + incorrect + '</p> <br> <p>Unanswered: ' + unanswered + '</p><button type="button" class="button" onclick="location.reload();">Try again</button></div>');
 };
-
-//TODO
-//FIX TIMER
